@@ -1,0 +1,29 @@
+.index-box {
+    margin: 50px 50px;
+    border: 2px solid black;
+    box-shadow: 0 0 40px #808080;
+    box-shadow: 0 0 20px black;
+    box-sizing: border-box;
+    padding: 30px 30px;
+}
+
+.intro h1, .intro h2, .intro h3 {
+    margin: 0;
+    text-align: center;
+    
+}
+ .intro {
+    display: inline-block;
+    border: 1px solid black;
+    padding: 20px;
+    margin: auto;
+ }
+
+img {
+    width: 250px;
+    height: auto;
+    border-radius: 50px;
+    vertical-align: auto;
+    box-shadow: 0px 0px 7px black;
+    box-shadow: 0px 0px 10px black;
+}
