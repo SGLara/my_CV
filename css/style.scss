@@ -1,68 +1,132 @@
-* {
-    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-    box-sizing: content-box;
-    text-align: justify;
-}
-
 body {
     background-image: URL("../img/b.jpg");
     background-attachment: fixed;
     background-size: cover;
 }
 
-.index-box {
-    position: relative;
-    padding: 20px;
-    width: 70%;
-    height: 1150px;
-    margin: auto;
-    overflow: hidden;
+.contenedor {
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: repeat(5, auto);
+
+    grid-template-areas: "intro         conocimientos"
+                         "intro         estudios"
+                         "datos         experiencia"
+                         "contacto      experiencia"
+                         "habilidades   referencias";
     color: white;
 }
 
-.index-box > div {
+.contenedor > div {
     background-color: rgba(0, 0, 0, 0.74);
-    padding: 5px 20px;
-    margin: 10px;
-    overflow: auto;
+    padding: 10px 30px;
+    border-radius: 20px;
+    border: 2px solid white;
 }
 
-.intro,
-.p1,
-.p2,
-.p3 {
-    position: relative;
-    width: 30%;
+.contenedor .intro {
+    grid-area: intro;
 }
 
-.p4,
-.p5,
-.p6,
-.p7 {
-    position: relative;
-    width: 60%;
-    left: 370px;
-    bottom: 1119px;
+.contenedor .datos {
+    grid-area: datos;
+}
+
+.contenedor .contacto {
+    grid-area: contacto;
+}
+
+.contenedor .habilidades {
+    grid-area: habilidades;
+}
+
+.contenedor .conocimientos {
+    grid-area: conocimientos;
+}
+
+.contenedor .estudios {
+    grid-area: estudios;
+}
+
+.contenedor .experiencia {
+    grid-area: experiencia;
+}
+
+.contenedor .referencias {
+    grid-area: referencias;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 3fr;
+    
+    grid-template-areas: "h2  h2  h2"
+                         "p1  p2  p3" ;
+    text-align: center;
+    padding: 30px;
+}
+
+.referencias .h2 {
+    grid-area: h2;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.referencias .p1{
+    background-color: white;
+    color: black;
+    align-self: start;
+    grid-area: p1;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.referencias .p2{
+    background-color: white;
+    color: black;
+    align-self: center;
+    grid-area: p2;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.referencias .p3{
+    background-color: white;
+    color: black;
+    align-self: end;
+    grid-area: p3;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+@media screen and (max-width: 768px){
+    .contenedor{
+        grid-template-areas: "intro"
+                             "datos"
+                             "contacto"
+                             "habilidades"
+                             "conocimientos"
+                             "estudios"
+                             "experiencia"
+                             "referencias";
+    }
 }
 
 h1,
-h2 {
+h2,
+h3 {
     text-align: center;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
         "Helvetica Neue", sans-serif;
 }
 
-img {
+.intro img {
     display: block;
-    width: 150px;
-    border-radius: 50px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 15px;
-}
-
-.p7-1 {
-    column-count: 3;
-    column-rule: 2px solid white;
-    text-align: center;
+    margin: auto;
+    width: 60%;
+    border-radius: 20px;
+    margin-top: 30px;
 }
